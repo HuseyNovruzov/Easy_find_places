@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+.responsive-navbar {
+  background-color: #000; }
+
+.menu-icon {
+  display: block;
+  float: right;
+  clear: right;
+  padding: 5px;
+  position: sticky;
+  z-index: 2;
+  display: none; }
+  .menu-icon i {
+    font-size: 20px;
+    border: 1px solid;
+    padding: 2px 10px;
+    color: #ED2168; }
+  .menu-icon #undo {
+    display: none; }
+
+header {
+  width: 100%;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  grid-template-areas: "logo navbar";
+  grid-gap: 0 5px;
+  transition: 0.6s ease-out; }
+
+.logo {
+  grid-area: logo;
+  padding: 5px;
+  display: inline-block; }
+  .logo p {
+    color: #ED2168;
+    font-size: 26px;
+    font-weight: 600; }
+  .logo span {
+    color: #fff;
+    font-size: 22px;
+    background-color: #ED2168;
+    padding: 4px 2px;
+    border-radius: 2px; }
+
+.mobile-logo {
+  grid-area: logo;
+  padding: 5px;
+  display: none; }
+  .mobile-logo p {
+    color: #ED2168;
+    font-size: 26px;
+    font-weight: 600; }
+  .mobile-logo span {
+    color: #fff;
+    font-size: 22px;
+    background-color: #ED2168;
+    padding: 4px 2px;
+    border-radius: 2px; }
+
+nav {
+  grid-area: navbar; }
+  nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "f-ball b-ball v-ball tennis skate";
+    grid-gap: 0 5px;
+    text-align: center;
+    padding: 6px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-family: "Josefin Slab", serif;
+      font-family: "Poiret One", cursive;
+      font-family: "Saira", sans-serif; }
+      nav ul li a:hover {
+        text-decoration: underline; }
+
+.f-ball {
+  grid-area: f-ball; }
+
+.b-ball {
+  grid-area: b-ball; }
+
+.v-ball {
+  grid-area: v-ball; }
+
+.tennis {
+  grid-area: tennis; }
+
+.skate {
+  grid-area: skate; }
+
+@media (min-width: 280px) and (max-width: 480px) {
+  .mobile-logo {
+    grid-area: logo;
+    padding: 5px;
+    display: inline-block; }
+    .mobile-logo p {
+      color: #ED2168;
+      font-size: 26px;
+      font-weight: 600; }
+    .mobile-logo span {
+      color: #fff;
+      font-size: 22px;
+      background-color: #ED2168;
+      padding: 4px 2px;
+      border-radius: 2px; }
+
+  .logo {
+    grid-area: logo;
+    padding: 5px;
+    display: none; }
+    .logo p {
+      color: #ED2168;
+      font-size: 26px;
+      font-weight: 600; }
+    .logo span {
+      color: #fff;
+      font-size: 22px;
+      background-color: #ED2168;
+      padding: 4px 2px;
+      border-radius: 2px; }
+
+  .menu-icon {
+    display: flex; }
+
+  header {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; } }
+@media (min-width: 481px) and (max-width: 767px) {
+  .mobile-logo {
+    display: inline-block; }
+
+  .logo {
+    display: none; }
+
+  .menu-icon {
+    display: flex; }
+
+  header {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobile-logo {
+    display: inline-block; }
+
+  .logo {
+    display: none; }
+
+  .menu-icon {
+    display: flex; }
+
+  header {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; } }
+
+/*# sourceMappingURL=Easy-find-places.css.map */
