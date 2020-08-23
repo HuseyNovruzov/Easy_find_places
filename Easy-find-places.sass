@@ -2,36 +2,6 @@ $txt-color: #ED2168
 $txt-font-1: 'Josefin Slab', serif
 $txt-font-2: 'Poiret One', cursive
 $txt-font-3: 'Saira', sans-serif
-	
-*
-	box-sizing: border-box
-	padding: 0
-	margin: 0
-.responsive-navbar
-	background-color: #000
-.menu-icon
-	display: block
-	float: right
-	clear: right
-	padding: 5px
-	position: sticky
-	z-index: 2
-	display: none
-	i
-		font-size: 20px
-		border: 1px solid
-		padding: 2px 10px
-		color: $txt-color
-	#undo
-		display: none
-header
-	width: 100%
-	background-color: #000
-	display: grid
-	grid-template-columns: 0.5fr 2fr
-	grid-template-areas: "logo navbar"
-	grid-gap: 0 5px
-	transition: .6s ease-out
 @mixin logo($visible)
 	grid-area: logo
 	padding: 5px
@@ -46,13 +16,43 @@ header
 		background-color: $txt-color
 		padding: 4px 2px
 		border-radius: 2px
-.logo
-	@include logo(inline-block)
+@mixin fontSaira($val1,$val2,$val3)
+	font-family: $val1
+	font-family: $val2
+	font-family: $val3
+	
+*
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+.responsive-navbar
+	background-color: #000
 .mobile-logo
 	@include logo(none)
-	
+.menu-icon
+	padding: 5px
+	display: none
+	i
+		font-size: 1.5rem
+		padding: 2px 10px
+		color: $txt-color
+	#undo
+		display: none
+.navbar
+	z-index: 2
+	width: 100%
+	background-color: #000
+	display: grid
+	grid-template-columns: 0.5fr 2fr
+	grid-template-areas: "logo navbar"
+	grid-gap: 0 5px
+	transition: .6s ease-out
+
+.logo
+	@include logo(inline-block)
 
 nav
+	position: relative
 	grid-area: navbar
 	ul
 		list-style-type: none
@@ -62,29 +62,69 @@ nav
 		grid-gap: 0 5px 
 		text-align: center
 		padding: 6px
+		.active
+			background: $txt-color
 		li
 			a
 				text-decoration: none
 				color: #fff
-				font-family: $txt-font-1 
-				font-family: $txt-font-2
-				font-family: $txt-font-3
+				@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
 				&:hover
 					text-decoration: underline
-	
 $values: f-ball, b-ball, v-ball, tennis, skate
 @each $value in $values
 	.#{$value}
 		grid-area: $value
+section
+	height: auto
+	position: relative
+	z-index: 1
+.bg-img
+	position: relative
+	background: url(images/basketball.jpeg) no-repeat center center
+	background-size: cover
+	width: auto
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	flex-grow: 2
+	z-index: 1
+	&>*
+		z-index: 2
+	.bg-text
+		font-size: 3rem
+		text-align: center
+		word-break: keep-all
+		color: hsl(11,68%,3%)
+		@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
+		font-weight: 550
+		padding: 0 0 10px 0
+input[type=button]
+	background-color: transparent
+	padding: 10px
+	border: 2px solid $txt-color
+	outline: none
+	border-radius: 7px
+	font-size: 17px
+	color: #fff
+	
+	&:hover
+		background-color: $txt-color
+		color: #fff
 
 @media (min-width: 280px) and (max-width: 480px)
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
 	.mobile-logo
-		@include logo(inline-block)
+		display: inline-block
 	.logo
-		@include logo(none)
+		display: none
 	.menu-icon
 		display: flex
-	header
+	.navbar
 		position: absolute
 		left: -100%
 		grid-template-columns: 1fr
@@ -98,13 +138,16 @@ $values: f-ball, b-ball, v-ball, tennis, skate
 
 
 @media (min-width: 481px) and (max-width: 767px)
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
 	.mobile-logo
 		display: inline-block
 	.logo
 		display: none
 	.menu-icon
 		display: flex
-	header
+	.navbar
 		position: absolute
 		left: -100%
 		grid-template-columns: 1fr
@@ -117,13 +160,16 @@ $values: f-ball, b-ball, v-ball, tennis, skate
 			height: 40vh
 
 @media (min-width: 768px) and (max-width: 1024px)
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
 	.mobile-logo
 		display: inline-block
 	.logo
 		display: none
 	.menu-icon
 		display: flex
-	header
+	.navbar
 		position: absolute
 		left: -100%
 		grid-template-columns: 1fr

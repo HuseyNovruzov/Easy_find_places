@@ -6,9 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&family=Poiret+One&family=Saira:wght@300&display=swap" rel="stylesheet">
-	<script src="Easy-find-places.js"></script>
 </head>
-<body onload="tasker.construct();">
+<body onload="tasker.construct()">
 <div class="responsive-navbar">
 	<div class="mobile-logo">
 		<p><span>Easy</span>find</p>
@@ -23,14 +22,24 @@
 		<p><span>Easy</span>find</p>
 	</div>
 	<nav>
-		<ul>
-			<li class="f-ball"><a href="">Football</a></li>
-			<li class="b-ball"><a href="">Basketball</a></li>
-			<li class="v-ball"><a href="">Valleyball</a></li>
-			<li class="tennis"><a href="">Tennis</a></li>
-			<li class="skate"><a href="">Skateboard</a></li>
+		<ul id="pagination">
+			<li class="f-ball active"><a href="">Football</a></li>
+			<li class="b-ball "><a href="#">Basketball</a></li>
+			<li class="v-ball "><a href="#">Valleyball</a></li>
+			<li class="tennis "><a href="#">Tennis</a></li>
+			<li class="skate "><a href="#">Skateboard</a></li>
 		</ul>
 	</nav>
 </header>
+<section>
+			<div class="bg-img" id="imgSlider1">
+				<span class="bg-text">
+					Find places to spend your leasure time
+					<p>where you want</p>
+				</span>
+				<input type="button" name="" value="&#9654 Guide Video">
+			</div>
+		</section> 
+		<script src="Easy-find-places.js"></script>
 </body>
 </html>
