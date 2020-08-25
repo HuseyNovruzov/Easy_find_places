@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0; }
 
+body {
+  background-color: #000; }
+
 .responsive-navbar {
   background-color: #000; }
 
@@ -15,7 +18,7 @@
     font-size: 26px;
     font-weight: 600; }
   .mobile-logo span {
-    color: #fff;
+    color: #F1F1F1;
     font-size: 22px;
     background-color: #ED2168;
     padding: 4px 2px;
@@ -33,6 +36,7 @@
 
 .navbar {
   z-index: 2;
+  padding: 10px 5px;
   width: 100%;
   background-color: #000;
   display: grid;
@@ -50,7 +54,7 @@
     font-size: 26px;
     font-weight: 600; }
   .logo span {
-    color: #fff;
+    color: #F1F1F1;
     font-size: 22px;
     background-color: #ED2168;
     padding: 4px 2px;
@@ -71,7 +75,7 @@ nav {
       background: #ED2168; }
     nav ul li a {
       text-decoration: none;
-      color: #fff;
+      color: #F1F1F1;
       font-family: "Josefin Slab", serif;
       font-family: "Poiret One", cursive;
       font-family: "Saira", sans-serif; }
@@ -130,10 +134,168 @@ input[type=button] {
   outline: none;
   border-radius: 7px;
   font-size: 17px;
-  color: #fff; }
+  color: #F1F1F1; }
   input[type=button]:hover {
     background-color: #ED2168;
-    color: #fff; }
+    color: #F1F1F1; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "football basketball tennis" "valleyball cycle skate";
+  grid-gap: 10px;
+  width: 80%;
+  color: #222;
+  font-size: 18px;
+  font-family: Helvetica, sans-sherif; }
+
+.grid-container div:not(.grid-box-text) {
+  height: 15em;
+  padding: 20px;
+  border-radius: 5px; }
+
+.football-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: football;
+  background-color: #2EE7BD; }
+  .football-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .football-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .football-box .grid-box-text p {
+      padding: 10px; }
+    .football-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
+
+.basketball-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: basketball;
+  background-color: #2EC0E7; }
+  .basketball-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .basketball-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .basketball-box .grid-box-text p {
+      padding: 10px; }
+    .basketball-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
+
+.tennis-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: tennis;
+  background-color: #662EE7; }
+  .tennis-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .tennis-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .tennis-box .grid-box-text p {
+      padding: 10px; }
+    .tennis-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
+
+.valleyball-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: valleyball;
+  background-color: #CB2EE7; }
+  .valleyball-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .valleyball-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .valleyball-box .grid-box-text p {
+      padding: 10px; }
+    .valleyball-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
+
+.cycle-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: cycle;
+  background-color: #E72EA7; }
+  .cycle-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .cycle-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .cycle-box .grid-box-text p {
+      padding: 10px; }
+    .cycle-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
+
+.skate-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: skate;
+  background-color: #F889C4; }
+  .skate-box .grid-box-text {
+    text-align: justify;
+    color: #222;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; }
+    .skate-box .grid-box-text h3 {
+      padding-bottom: 10px; }
+    .skate-box .grid-box-text p {
+      padding: 10px; }
+    .skate-box .grid-box-text footer {
+      display: flex;
+      padding: 20px 10px;
+      justify-content: flex-end;
+      font-family: "Balsamiq Sans", cursive; }
 
 @media (min-width: 280px) and (max-width: 480px) {
   .responsive-navbar {
@@ -159,7 +321,11 @@ input[type=button] {
   nav ul {
     grid-template-columns: 1fr;
     grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
-    height: 40vh; } }
+    height: 40vh; }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "football" "basketball" "tennis" "valleyball" "cycle" "skate"; } }
 @media (min-width: 481px) and (max-width: 767px) {
   .responsive-navbar {
     display: flex;
@@ -184,7 +350,11 @@ input[type=button] {
   nav ul {
     grid-template-columns: 1fr;
     grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
-    height: 40vh; } }
+    height: 40vh; }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "football basketball" "tennis valleyball" "cycle skate"; } }
 @media (min-width: 768px) and (max-width: 1024px) {
   .responsive-navbar {
     display: flex;
@@ -209,6 +379,10 @@ input[type=button] {
   nav ul {
     grid-template-columns: 1fr;
     grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
-    height: 40vh; } }
+    height: 40vh; }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "football football" "basketball tennis" "valleyball valleyball" "cycle skate"; } }
 
 /*# sourceMappingURL=Easy-find-places.css.map */

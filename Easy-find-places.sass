@@ -2,6 +2,9 @@ $txt-color: #ED2168
 $txt-font-1: 'Josefin Slab', serif
 $txt-font-2: 'Poiret One', cursive
 $txt-font-3: 'Saira', sans-serif
+$font-helvetica: Helvetica, sans-sherif
+$white: #F1F1F1
+$grid-box-color: #222
 @mixin logo($visible)
 	grid-area: logo
 	padding: 5px
@@ -11,7 +14,7 @@ $txt-font-3: 'Saira', sans-serif
 		font-size: 26px
 		font-weight: 600
 	span
-		color: #fff
+		color: $white
 		font-size: 22px
 		background-color: $txt-color
 		padding: 4px 2px
@@ -20,11 +23,38 @@ $txt-font-3: 'Saira', sans-serif
 	font-family: $val1
 	font-family: $val2
 	font-family: $val3
-	
+@mixin gridBoxText($padding)
+	.grid-box-text
+		text-align: justify
+		color: #222
+		font-size: 1rem
+		display: flex
+		flex-direction: column
+		padding: 0 $padding
+		h3
+			padding-bottom: 10px
+		p
+			padding: 10px
+		footer
+			display: flex
+			padding: 20px 10px
+			justify-content: flex-end
+			font-family: 'Balsamiq Sans', cursive
+@mixin gridBox($className,$gridArea,$bgColor)
+	.#{$className}
+		display: flex
+		justify-content: center
+		align-items: center
+		grid-area: $gridArea
+		background-color: $bgColor
+		@include gridBoxText(10px)
+		
 *
 	box-sizing: border-box
 	padding: 0
 	margin: 0
+body
+	background-color: #000
 .responsive-navbar
 	background-color: #000
 .mobile-logo
@@ -40,6 +70,7 @@ $txt-font-3: 'Saira', sans-serif
 		display: none
 .navbar
 	z-index: 2
+	padding: 10px 5px
 	width: 100%
 	background-color: #000
 	display: grid
@@ -67,7 +98,7 @@ nav
 		li
 			a
 				text-decoration: none
-				color: #fff
+				color: $white
 				@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
 				&:hover
 					text-decoration: underline
@@ -108,13 +139,41 @@ input[type=button]
 	outline: none
 	border-radius: 7px
 	font-size: 17px
-	color: #fff
+	color: $white
 	
 	&:hover
 		background-color: $txt-color
-		color: #fff
+		color: $white
+
+.center
+	display: flex
+	justify-content: center
+	padding: 20px 0
+
+.grid-container
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-areas: 'football basketball tennis''valleyball cycle skate'
+	grid-gap: 10px
+	width: 80%
+	color: $grid-box-color
+	font-size: 18px
+	font-family: $font-helvetica
+
+.grid-container div:not(.grid-box-text)
+	height: 15em
+	padding: 20px
+	border-radius: 5px
+
+@include gridBox(football-box,football,#2EE7BD)
+@include gridBox(basketball-box,basketball,#2EC0E7)
+@include gridBox(tennis-box,tennis,#662EE7)
+@include gridBox(valleyball-box,valleyball,#CB2EE7)
+@include gridBox(cycle-box,cycle,#E72EA7)
+@include gridBox(skate-box,skate,#F889C4)
 
 @media (min-width: 280px) and (max-width: 480px)
+
 	.responsive-navbar
 		display: flex
 		justify-content: space-between
@@ -135,8 +194,10 @@ input[type=button]
 			grid-template-columns: 1fr
 			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
 			height: 40vh
-
-
+	.grid-container
+		grid-template-columns: 1fr
+		grid-template-areas: 'football''basketball''tennis''valleyball''cycle''skate'
+	
 @media (min-width: 481px) and (max-width: 767px)
 	.responsive-navbar
 		display: flex
@@ -158,6 +219,11 @@ input[type=button]
 			grid-template-columns: 1fr
 			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
 			height: 40vh
+	.grid-container
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: 'football basketball''tennis valleyball''cycle skate'
+		
+	
 
 @media (min-width: 768px) and (max-width: 1024px)
 	.responsive-navbar
@@ -180,7 +246,9 @@ input[type=button]
 			grid-template-columns: 1fr
 			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
 			height: 40vh
-
-
+	.grid-container
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: 'football football''basketball tennis' 'valleyball valleyball''cycle skate'
+	
 
 
