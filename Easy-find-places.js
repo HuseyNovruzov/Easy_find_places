@@ -27,10 +27,12 @@ let tasker ={
 			this.navbar = document.querySelector('.navbar');
 			this.underList = document.querySelector('#pagination');
 			this.childList = this.underList.children;
+			this.body = document.querySelector('.body');
 		},
 		//open and close mobile menu
 		openClose: function(){
 			if(this.open){
+				this.body.setAttribute('style','overflow: hidden')
 				this.navbar.setAttribute('style','left:0');
 				this.btnChilds[0].setAttribute('style','display:none');
 				this.btnChilds[1].setAttribute('style','display:block');
