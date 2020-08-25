@@ -39,6 +39,7 @@ let tasker ={
 				this.open = false;
 			}
 			else{
+				this.body.setAttribute('style','overflow: visible')
 				this.navbar.setAttribute('style','left: -100%');
 				this.btnChilds[1].setAttribute('style','display:none');
 				this.btnChilds[0].setAttribute('style','display:block');
