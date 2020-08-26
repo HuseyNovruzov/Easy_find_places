@@ -55,6 +55,7 @@ $grid-box-color: #222
 	margin: 0
 body
 	background-color: #000
+	padding: 0 0 10px 0
 .responsive-navbar
 	background-color: #000
 .mobile-logo
@@ -74,11 +75,11 @@ body
 	width: 100%
 	background-color: #000
 	display: grid
-	grid-template-columns: 0.5fr 2fr
+	grid-template-columns: .5fr 1fr 
 	grid-template-areas: "logo navbar"
 	grid-gap: 0 5px
 	transition: .6s ease-out
-
+	align-content: center
 .logo
 	@include logo(inline-block)
 
@@ -90,13 +91,14 @@ nav
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 
 		grid-template-areas: "f-ball b-ball v-ball tennis skate"
-		grid-gap: 0 5px 
+		grid-gap: 0 5px
 		text-align: center
-		padding: 6px
+		padding: 10px 0
 		.active
-			background: $txt-color
+			color: $txt-color
 		li
 			a
+				
 				text-decoration: none
 				color: $white
 				@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
@@ -171,6 +173,38 @@ input[type=button]
 @include gridBox(valleyball-box,valleyball,#CB2EE7)
 @include gridBox(cycle-box,cycle,#E72EA7)
 @include gridBox(skate-box,skate,#F889C4)
+.social-box
+	padding: 10px 0
+	.social-media
+		display: flex
+		justify-content: space-around
+		font-size: 22px
+		padding: 10px 0
+		a
+			border-left: 1px solid $txt-color
+			border-right: 1px solid $txt-color
+			padding: 0 10px
+			text-decoration: none
+			color: #fff
+	.bottom-part
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+		font-family: $font-helvetica
+		.copyright
+			display: flex
+			flex-wrap: wrap
+			color: #666
+			padding: 10px 
+		.communication
+			padding: 10px
+			a
+				padding: 0 2px
+				text-decoration: none
+				color: #666
+				&:hover
+					color: #fff
 
 @media (min-width: 280px) and (max-width: 480px)
 
@@ -197,7 +231,9 @@ input[type=button]
 	.grid-container
 		grid-template-columns: 1fr
 		grid-template-areas: 'football''basketball''tennis''valleyball''cycle''skate'
-	
+	.bottom-part
+		.copyright
+			order: 2
 @media (min-width: 481px) and (max-width: 767px)
 	.responsive-navbar
 		display: flex
@@ -212,7 +248,7 @@ input[type=button]
 		position: absolute
 		left: -100%
 		grid-template-columns: 1fr
-		grid-template-areas: 'logo' 'navbar'
+		grid-template-areas: 'logo' 'navbar' 
 		height: 100vh
 	nav
 		ul
@@ -222,7 +258,9 @@ input[type=button]
 	.grid-container
 		grid-template-columns: 1fr 1fr
 		grid-template-areas: 'football basketball''tennis valleyball''cycle skate'
-		
+	.bottom-part
+		.copyright
+			order: 2
 	
 
 @media (min-width: 768px) and (max-width: 1024px)
@@ -239,7 +277,7 @@ input[type=button]
 		position: absolute
 		left: -100%
 		grid-template-columns: 1fr
-		grid-template-areas: 'logo' 'navbar'
+		grid-template-areas: 'logo' 'navbar' 
 		height: 100vh
 	nav
 		ul
@@ -249,6 +287,8 @@ input[type=button]
 	.grid-container
 		grid-template-columns: 1fr 1fr
 		grid-template-areas: 'football football''basketball tennis' 'valleyball valleyball''cycle skate'
-	
+	.bottom-part
+		.copyright
+			order: 2
 
 

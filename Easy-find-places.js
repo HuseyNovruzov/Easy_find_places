@@ -26,7 +26,7 @@ let tasker ={
 			this.btnChilds = this.btns.children;
 			this.navbar = document.querySelector('.navbar');
 			this.underList = document.querySelector('#pagination');
-			this.childList = this.underList.children;
+			this.links = document.querySelectorAll('.btn');
 			this.body = document.querySelector('.body');
 		},
 		//open and close mobile menu
@@ -52,15 +52,15 @@ let tasker ={
 		},
 		// show current active link
 		scanList: function(){
-		let active,current;
-		for(let i = 0;i<this.childList.length;i++){
-			childList = this.childList[i];
+		let current;
+		for(let i = 0;i<this.links.length;i++){
+			links = this.links[i];
 			current = this.underList.getElementsByClassName("active");
-			childList.onclick = this.activate.bind(this,childList,current);
+			links.onclick = this.activate.bind(this,links,current);
 		}
 	},
-		activate: function(childList,current){
+		activate: function(links,current){
 			current[0].className = current[0].className.replace("active","");
-			childList.className+="active";
+			links.className+=" active";
 	}
 	}
