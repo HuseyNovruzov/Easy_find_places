@@ -63,10 +63,11 @@ body
 .menu-icon
 	padding: 5px
 	display: none
-	i
+	span
 		font-size: 1.5rem
 		padding: 2px 10px
 		color: $txt-color
+		cursor: pointer
 	#undo
 		display: none
 .navbar
@@ -178,14 +179,23 @@ input[type=button]
 	.social-media
 		display: flex
 		justify-content: space-around
-		font-size: 22px
+		font-size: 18px
 		padding: 10px 0
+		font-family: $font-helvetica
 		a
 			border-left: 1px solid $txt-color
 			border-right: 1px solid $txt-color
 			padding: 0 10px
 			text-decoration: none
 			color: #fff
+			&:nth-child(1):hover
+				color: #4267B2
+			&:nth-child(2):hover
+				color: #4267B2
+			&:nth-child(3):hover
+				color: #FF0000
+			&:nth-child(4):hover
+				color: #1DA1F2
 	.bottom-part
 		display: flex
 		flex-wrap: wrap

@@ -28,10 +28,11 @@ body {
 .menu-icon {
   padding: 5px;
   display: none; }
-  .menu-icon i {
+  .menu-icon span {
     font-size: 1.5rem;
     padding: 2px 10px;
-    color: #ED2168; }
+    color: #ED2168;
+    cursor: pointer; }
   .menu-icon #undo {
     display: none; }
 
@@ -304,14 +305,23 @@ input[type=button] {
   .social-box .social-media {
     display: flex;
     justify-content: space-around;
-    font-size: 22px;
-    padding: 10px 0; }
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: Helvetica, sans-sherif; }
     .social-box .social-media a {
       border-left: 1px solid #ED2168;
       border-right: 1px solid #ED2168;
       padding: 0 10px;
       text-decoration: none;
       color: #fff; }
+      .social-box .social-media a:nth-child(1):hover {
+        color: #4267B2; }
+      .social-box .social-media a:nth-child(2):hover {
+        color: #4267B2; }
+      .social-box .social-media a:nth-child(3):hover {
+        color: #FF0000; }
+      .social-box .social-media a:nth-child(4):hover {
+        color: #1DA1F2; }
   .social-box .bottom-part {
     display: flex;
     flex-wrap: wrap;
