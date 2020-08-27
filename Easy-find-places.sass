@@ -53,6 +53,7 @@ $grid-box-color: #222
 	box-sizing: border-box
 	padding: 0
 	margin: 0
+
 body
 	background-color: #000
 	padding: 0 0 10px 0
@@ -63,13 +64,27 @@ body
 .menu-icon
 	padding: 5px
 	display: none
+	width: 40px
+	height: 40px
+	justify-content: center
+	flex-direction: column
+	align-items: center
 	span
-		font-size: 1.5rem
-		padding: 2px 10px
-		color: $txt-color
-		cursor: pointer
-	#undo
-		display: none
+		background-color: $txt-color
+		width: 30px
+		height: 2px
+		margin: 3px 0
+		transition: all .6s linear
+.top
+	position: absolute
+	transform: rotate(45deg)
+	margin: 0
+.bottom
+	position: absolute
+	transform: rotate(-45deg)
+	margin: 0		
+.remove
+	display: none
 .navbar
 	z-index: 2
 	padding: 10px 5px
@@ -99,7 +114,6 @@ nav
 			color: $txt-color
 		li
 			a
-				
 				text-decoration: none
 				color: $white
 				@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
@@ -196,6 +210,17 @@ input[type=button]
 				color: #FF0000
 			&:nth-child(4):hover
 				color: #1DA1F2
+	.return
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		padding-right: 20px
+		a
+			border: 1px solid #fff
+			border-radius: 3px
+			padding: 10px
+			text-decoration: none
+			color: #fff 
 	.bottom-part
 		display: flex
 		flex-wrap: wrap
@@ -297,8 +322,5 @@ input[type=button]
 	.grid-container
 		grid-template-columns: 1fr 1fr
 		grid-template-areas: 'football football''basketball tennis' 'valleyball valleyball''cycle skate'
-	.bottom-part
-		.copyright
-			order: 2
 
 

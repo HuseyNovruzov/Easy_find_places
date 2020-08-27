@@ -32,23 +32,24 @@ let tasker ={
 		//open and close mobile menu
 		openClose: function(){
 			if(this.open){
+				this.btnChilds[0].setAttribute('class','top');
+				this.btnChilds[1].setAttribute('class','remove');
+				this.btnChilds[2].setAttribute('class','bottom');
 				this.body.setAttribute('style','overflow: hidden')
 				this.navbar.setAttribute('style','left:0');
-				this.btnChilds[0].setAttribute('style','display:none');
-				this.btnChilds[1].setAttribute('style','display:block');
 				this.open = false;
 			}
 			else{
+				this.btnChilds[0].classList.remove("top");
+				this.btnChilds[1].classList.remove("remove");
+				this.btnChilds[2].classList.remove("bottom");
 				this.body.setAttribute('style','overflow: visible')
 				this.navbar.setAttribute('style','left: -100%');
-				this.btnChilds[1].setAttribute('style','display:none');
-				this.btnChilds[0].setAttribute('style','display:block');
 				this.open = true;
 			}
 		},
 		bindEvents: function(){
-			this.btnChilds[0].onclick = this.openClose.bind(this);
-			this.btnChilds[1].onclick = this.openClose.bind(this);
+			this.btns.onclick = this.openClose.bind(this);
 		},
 		// show current active link
 		scanList: function(){
