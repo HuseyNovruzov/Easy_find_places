@@ -1,0 +1,85 @@
+@mixin logo($visible)
+	grid-area: logo
+	padding: 5px
+	display: $visible
+	p
+		color: $txt-color
+		font-size: 26px
+		font-weight: 600
+	span
+		color: $white
+		font-size: 22px
+		background-color: $txt-color
+		padding: 4px 2px
+		border-radius: 2px
+@mixin fontSaira($val1,$val2,$val3)
+	font-family: $val1
+	font-family: $val2
+	font-family: $val3
+@mixin gridBoxText($padding)
+	.grid-box-text
+		text-align: justify
+		color: #222
+		font-size: 1rem
+		display: flex
+		flex-direction: column
+		padding: 0 $padding
+		h3
+			padding-bottom: 10px
+		p
+			padding: 10px
+		footer
+			display: flex
+			padding: 20px 10px
+			justify-content: flex-end
+			font-family: 'Balsamiq Sans', cursive
+@mixin gridBox($className,$gridArea,$bgColor)
+	.#{$className}
+		display: flex
+		justify-content: center
+		align-items: center
+		grid-area: $gridArea
+		background-color: $bgColor
+		@include gridBoxText(10px)
+@mixin form($value)
+	border: 1px solid $txt-color
+	width: 60%
+	height: $value
+	display: flex
+	align-items: center
+	justify-content: space-around
+	box-shadow: 0 0 5px $txt-color
+	i
+		color: #fff
+	input
+		background-color: transparent
+		border: none
+		outline: none
+		width: 90%
+		height: $value
+		color: #fff
+		&::placeholder
+			color: #D9DBEB
+@mixin mapGrid($class_name, $grid_field)
+	.#{$class_name}
+		display: flex
+		flex-direction: column
+		justify-content: center
+		color: $white
+		height: 20em
+		box-shadow: 0 0 3px $content-color
+		p
+			padding: 0 20px
+			font-family: $font-helvetica
+			font-size: 18px
+			font-weight: 600
+			margin: 1em 0
+		.map-box
+			display: flex
+			justify-content: center
+			align-items: center
+			padding: 5px
+			border-radius: 3px
+			iframe
+				border-radius: 3px
+				width: 90%

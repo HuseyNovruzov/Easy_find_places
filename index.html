@@ -11,17 +11,19 @@
 	<title>Football | Basketball | Volleyball | Tennis | Cycle | Skateboard</title>
 	<meta name="title" content="Football | Basketball | Volleyball | Tennis | Cycle | Skateboard">
 	<meta name="description" content="Discover places with Easyfind &amp; spend your leisure time with friends">
-	 <link rel="stylesheet" type="text/css" href="Easy-find-places.css">
+	<!--External links-->
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&family=Poiret+One&family=Saira:wght@300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
 </head>
 
-<body class="body" onload="tasker.construct()">
+<body class="body" onload="loading()">
 <div class="responsive-navbar">
-	<div class="mobile-logo">
-		<p><span>Easy</span>find</p>
-	</div>
+		<div class="mobile-logo">
+			<p>Easy<span>find</span></p>
+		</div>
 	<div class="menu-icon" id="do">
 	 	<span></span>
 	 	<span></span>
@@ -34,8 +36,9 @@
 	</div>
 	<nav>
 		<ul id="pagination">
+			<a href="" class="active"></a>
 			<li class="f-ball">
-				<a href="" title="Footbal courts" class="btn active">Football</a>
+				<a href="Football.html" title="Footbal courts" class="btn">Football</a>
 			</li>
 			<li class="b-ball ">
 				<a href="#" title="Basketball courts" class="btn">Basketball</a>
@@ -54,11 +57,11 @@
 </header>
 <section>
 		<div class="bg-img" id="imgSlider1">
-			<span class="bg-text">
+			<span class="bg-text lax" data-lax-translate-y="0 1, 400 -200" data-lax-opacity="0 1, 300 0">
 				Find places to spend your leasure time
 				<p>where you want</p>
 			</span>
-			<input type="button" name="" value="&#9654 Guide Video">
+			<input type="button" value="&#9654 Guide Video">
 		</div>
 		<div class="center">
 			<div class="grid-container">
@@ -142,5 +145,13 @@
 	</div>
 </footer>
 		<script src="Easy-find-places.js"></script>
+		<script>
+			 function loading(){
+            	tasker.variables();
+            	tasker.bindEvents();
+				tasker.scanList();
+				tasker.parallax();
+        	}
+		</script>
 </body>
 </html>

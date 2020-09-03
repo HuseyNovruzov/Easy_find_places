@@ -1,0 +1,66 @@
+.responsive-navbar  
+    background-color: #000
+.mobile-logo
+    @include logo(none)
+.menu-icon
+    padding: 5px
+    display: none
+    width: 40px
+    height: 40px
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    span
+        background-color: $txt-color
+        width: 30px
+        height: 2px
+        margin: 3px 0
+        transition: all .6s linear
+.top
+    position: absolute
+    transform: rotate(45deg)
+    margin: 0
+.bottom
+    position: absolute
+    transform: rotate(-45deg)
+    margin: 0		
+.remove
+    display: none
+.navbar
+    z-index: 2
+    padding: 10px 5px
+    width: 100%
+    background-color: #000
+    display: grid
+    grid-template-columns: .5fr 1fr 
+    grid-template-areas: "logo navbar"
+    grid-gap: 0 5px
+    transition: .6s ease-out
+    align-content: center
+.logo
+    @include logo(inline-block)
+
+nav
+    position: relative
+    grid-area: navbar
+    ul
+        list-style-type: none
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 
+        grid-template-areas: "f-ball b-ball v-ball tennis skate"
+        grid-gap: 0 5px
+        text-align: center
+        padding: 10px 0
+        .active
+            color: $txt-color
+        li
+            a
+                text-decoration: none
+                color: $white
+                @include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
+                &:hover
+                    text-decoration: underline
+$values: f-ball, b-ball, v-ball, tennis, skate
+@each $value in $values
+    .#{$value}
+        grid-area: $value

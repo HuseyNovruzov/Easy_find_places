@@ -1,25 +1,16 @@
-//background image slider
-let bg_img,i;
-bg_img = document.querySelector('.bg-img');
-i =0;
-	setInterval(function slide(){
-		let images; 
-		images = [
-		'images/football.jpeg','images/tennis.jpeg',
-		'images/volleyball.jpeg','images/skateboard.jpeg',
-		'images/cycling.jpeg','images/basketball.jpeg'];
-		bg_img.setAttribute('style','background-image: url('+
-			images[i++]+');transition-duration: 3s;');
-		if(i>=images.length){
-			i = 0;
-		}},7000)
 
-let tasker ={
-		construct: function(){
-			this.variables();
-			this.bindEvents();
-			this.scanList();
+let tasker = {
+	
+		parallax: function(){
+			lax.setup() // init
+
+			const updateLax = () => {
+			lax.update(window.scrollY)
+			window.requestAnimationFrame(updateLax)
+		}
+			window.requestAnimationFrame(updateLax)
 		},
+
 		variables: function(){
 			this.open = true;
 			this.btns = document.querySelector('.menu-icon');
@@ -58,10 +49,13 @@ let tasker ={
 			links = this.links[i];
 			current = this.underList.getElementsByClassName("active");
 			links.onclick = this.activate.bind(this,links,current);
+			
 		}
 	},
 		activate: function(links,current){
 			current[0].className = current[0].className.replace("active","");
 			links.className+=" active";
+			links.preventDefault();
 	}
 	}
+

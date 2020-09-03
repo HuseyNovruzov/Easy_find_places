@@ -1,0 +1,190 @@
+@import 'abstract/variables'
+@import 'abstract/mixins'
+@import 'components/navigation_bar'
+@import 'components/footer'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+body
+    background: #000
+.head-grid-container
+    background: #000
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 10px 0
+    .search
+        @include form(2em)
+.grid-container
+    display: grid
+    margin: 2em
+    grid-template-columns: 1fr 1.5fr
+    grid-template-areas: 'left-side right-side' 'middle-left middle-right' 'bottom-left bottom-right'
+    
+.left-side
+    grid-area: left-side
+    height: 15em
+    display: flex
+    align-items: center
+    justify-content: center
+    .text-box
+        display: flex
+        flex-direction: column
+        padding: 10px
+        font-size: 20px
+        font-family: $font-helvetica
+        font-weight: bold
+        line-height: 25px
+        color: $white
+        span
+            height: 2px
+            width: 40%
+            background: $content-color
+
+.right-side
+    grid-area: right-side
+    height: 15em
+    img
+        width: 100%
+        height: inherit
+.middle-left
+    grid-area: middle-left
+    height: 20em
+    img
+        width: 100%
+        height: inherit
+.middle-right
+    grid-area: middle-right
+    height: 20em
+    display: flex
+    justify-content: center
+    align-items: center
+    .middle-text-box
+        display: flex
+        flex-direction: column
+        justify-content: center
+        font-size: 40px
+        font-weight: bold
+        font-family: $font-helvetica
+        color: $content-color
+
+.bottom-left
+    grid-area: bottom-left
+    display: flex
+    align-items: center
+    height: 25em
+    padding-left: 10px
+    .text-box
+        display: flex
+        flex-direction: column
+        justify-content: center
+        font-size: 18px
+        font-family: $font-helvetica
+        line-height: 25px
+        color: $white
+        span
+            height: 2px
+            width: 40%
+            background: $content-color
+
+.bottom-right
+    grid-area: bottom-right
+    height: 25em
+    img
+        width: 100%  
+        height: 25em
+      
+.grid-items
+    margin: 2em
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-areas: 'map1 map2 map3'
+    grid-gap: 15px
+    @include mapGrid(item1, map1)
+    @include mapGrid(item2, map2)
+    @include mapGrid(item3, map3)
+@media (min-width: 280px) and (max-width: 480px)
+    .responsive-navbar
+        display: flex
+        justify-content: space-between
+    .mobile-logo
+        display: inline-block
+    .logo
+        display: none
+    .menu-icon
+        display: flex
+    .navbar
+        position: absolute
+        left: -100%
+        grid-template-columns: 1fr
+        grid-template-areas: 'logo' 'navbar'
+        height: 100vh
+    nav
+        ul
+            grid-template-columns: 1fr
+            grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+            height: 40vh
+    .grid-container
+        grid-template-columns: 1fr
+        grid-template-areas: 'left-side' 'right-side' 'middle-right' 'middle-left' 'bottom-left' 'bottom-right'
+        margin: 0
+    .grid-items
+        grid-template-columns: 1fr
+        grid-template-areas: 'map1' 'map2' 'map3'
+    .bottom-part
+        .copyright
+            order: 2
+@media (min-width: 481px) and (max-width: 767px)
+    .responsive-navbar
+        display: flex
+        justify-content: space-between
+    .mobile-logo
+        display: inline-block
+    .logo
+        display: none
+    .menu-icon
+        display: flex
+    .navbar
+        position: absolute
+        left: -100%
+        grid-template-columns: 1.5fr
+        grid-template-areas: 'logo' 'navbar'
+        height: 100vh
+    nav
+        ul
+            grid-template-columns: 1fr
+            grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+            height: 40vh
+    .grid-container
+        grid-template-columns: 1fr
+        grid-template-areas: 'left-side' 'right-side' 'middle-right' 'middle-left' 'bottom-left' 'bottom-right'
+        margin: 0
+    .grid-items
+        grid-template-columns: 1fr
+        grid-template-areas: 'map1' 'map2' 'map3'
+@media (min-width: 765px) and (max-width: 1024px)
+    .responsive-navbar
+        display: flex
+        justify-content: space-between
+    .mobile-logo
+        display: inline-block
+    .logo
+        display: none
+    .menu-icon
+        display: flex
+    .navbar
+        position: absolute
+        left: -100%
+        grid-template-columns: 1.5fr
+        grid-template-areas: 'logo' 'navbar'
+        height: 100vh
+    nav
+        ul
+            grid-template-columns: 1fr
+            grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+            height: 40vh
+    .grid-items
+        grid-template-columns: 1fr 1fr
+        grid-template-areas: 'map1 map2' 'map3 map3'

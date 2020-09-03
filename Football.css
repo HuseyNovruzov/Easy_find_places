@@ -1,0 +1,453 @@
+.responsive-navbar {
+  background-color: #000; }
+
+.mobile-logo {
+  grid-area: logo;
+  padding: 5px;
+  display: none; }
+  .mobile-logo p {
+    color: #ED2168;
+    font-size: 26px;
+    font-weight: 600; }
+  .mobile-logo span {
+    color: #fff;
+    font-size: 22px;
+    background-color: #ED2168;
+    padding: 4px 2px;
+    border-radius: 2px; }
+
+.menu-icon {
+  padding: 5px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .menu-icon span {
+    background-color: #ED2168;
+    width: 30px;
+    height: 2px;
+    margin: 3px 0;
+    transition: all 0.6s linear; }
+
+.top {
+  position: absolute;
+  transform: rotate(45deg);
+  margin: 0; }
+
+.bottom {
+  position: absolute;
+  transform: rotate(-45deg);
+  margin: 0; }
+
+.remove {
+  display: none; }
+
+.navbar {
+  z-index: 2;
+  padding: 10px 5px;
+  width: 100%;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-areas: "logo navbar";
+  grid-gap: 0 5px;
+  transition: 0.6s ease-out;
+  align-content: center; }
+
+.logo {
+  grid-area: logo;
+  padding: 5px;
+  display: inline-block; }
+  .logo p {
+    color: #ED2168;
+    font-size: 26px;
+    font-weight: 600; }
+  .logo span {
+    color: #fff;
+    font-size: 22px;
+    background-color: #ED2168;
+    padding: 4px 2px;
+    border-radius: 2px; }
+
+nav {
+  position: relative;
+  grid-area: navbar; }
+  nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "f-ball b-ball v-ball tennis skate";
+    grid-gap: 0 5px;
+    text-align: center;
+    padding: 10px 0; }
+    nav ul .active {
+      color: #ED2168; }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-family: "Josefin Slab", serif;
+      font-family: "Poiret One", cursive;
+      font-family: "Saira", sans-serif; }
+      nav ul li a:hover {
+        text-decoration: underline; }
+
+.f-ball {
+  grid-area: f-ball; }
+
+.b-ball {
+  grid-area: b-ball; }
+
+.v-ball {
+  grid-area: v-ball; }
+
+.tennis {
+  grid-area: tennis; }
+
+.skate {
+  grid-area: skate; }
+
+.social-box {
+  padding: 10px 0; }
+  .social-box .social-media {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: Helvetica, sans-sherif; }
+    .social-box .social-media a {
+      border-left: 1px solid #ED2168;
+      border-right: 1px solid #ED2168;
+      padding: 0 10px;
+      text-decoration: none;
+      color: #fff; }
+      .social-box .social-media a:nth-child(1):hover {
+        color: #4267B2; }
+      .social-box .social-media a:nth-child(2):hover {
+        color: #4267B2; }
+      .social-box .social-media a:nth-child(3):hover {
+        color: #FF0000; }
+      .social-box .social-media a:nth-child(4):hover {
+        color: #1DA1F2; }
+  .social-box .return {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px; }
+    .social-box .return a {
+      border: 1px solid #fff;
+      border-radius: 3px;
+      padding: 10px;
+      text-decoration: none;
+      color: #fff; }
+  .social-box .bottom-part {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica, sans-sherif; }
+    .social-box .bottom-part .copyright {
+      display: flex;
+      flex-wrap: wrap;
+      color: #666;
+      padding: 10px; }
+    .social-box .bottom-part .communication {
+      padding: 10px; }
+      .social-box .bottom-part .communication a {
+        padding: 0 2px;
+        text-decoration: none;
+        color: #666; }
+        .social-box .bottom-part .communication a:hover {
+          color: #fff; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #000; }
+
+.head-grid-container {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0; }
+  .head-grid-container .search {
+    border: 1px solid #ED2168;
+    width: 60%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5px #ED2168; }
+    .head-grid-container .search i {
+      color: #fff; }
+    .head-grid-container .search input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      width: 90%;
+      height: 2em;
+      color: #fff; }
+      .head-grid-container .search input::placeholder {
+        color: #D9DBEB; }
+
+.grid-container {
+  display: grid;
+  margin: 2em;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "left-side right-side" "middle-left middle-right" "bottom-left bottom-right"; }
+
+.left-side {
+  grid-area: left-side;
+  height: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .left-side .text-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Helvetica, sans-sherif;
+    font-weight: bold;
+    line-height: 25px;
+    color: #fff; }
+    .left-side .text-box span {
+      height: 2px;
+      width: 40%;
+      background: #1974db; }
+
+.right-side {
+  grid-area: right-side;
+  height: 15em; }
+  .right-side img {
+    width: 100%;
+    height: inherit; }
+
+.middle-left {
+  grid-area: middle-left;
+  height: 20em; }
+  .middle-left img {
+    width: 100%;
+    height: inherit; }
+
+.middle-right {
+  grid-area: middle-right;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .middle-right .middle-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Helvetica, sans-sherif;
+    color: #1974db; }
+
+.bottom-left {
+  grid-area: bottom-left;
+  display: flex;
+  align-items: center;
+  height: 25em;
+  padding-left: 10px; }
+  .bottom-left .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    font-family: Helvetica, sans-sherif;
+    line-height: 25px;
+    color: #fff; }
+    .bottom-left .text-box span {
+      height: 2px;
+      width: 40%;
+      background: #1974db; }
+
+.bottom-right {
+  grid-area: bottom-right;
+  height: 25em; }
+  .bottom-right img {
+    width: 100%;
+    height: 25em; }
+
+.grid-items {
+  margin: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "map1 map2 map3";
+  grid-gap: 15px; }
+  .grid-items .item1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 20em;
+    box-shadow: 0 0 3px #1974db; }
+    .grid-items .item1 p {
+      padding: 0 20px;
+      font-family: Helvetica, sans-sherif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 1em 0; }
+    .grid-items .item1 .map-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border-radius: 3px; }
+      .grid-items .item1 .map-box iframe {
+        border-radius: 3px;
+        width: 90%; }
+  .grid-items .item2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 20em;
+    box-shadow: 0 0 3px #1974db; }
+    .grid-items .item2 p {
+      padding: 0 20px;
+      font-family: Helvetica, sans-sherif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 1em 0; }
+    .grid-items .item2 .map-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border-radius: 3px; }
+      .grid-items .item2 .map-box iframe {
+        border-radius: 3px;
+        width: 90%; }
+  .grid-items .item3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 20em;
+    box-shadow: 0 0 3px #1974db; }
+    .grid-items .item3 p {
+      padding: 0 20px;
+      font-family: Helvetica, sans-sherif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 1em 0; }
+    .grid-items .item3 .map-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border-radius: 3px; }
+      .grid-items .item3 .map-box iframe {
+        border-radius: 3px;
+        width: 90%; }
+
+@media (min-width: 280px) and (max-width: 480px) {
+  .responsive-navbar {
+    display: flex;
+    justify-content: space-between; }
+
+  .mobile-logo {
+    display: inline-block; }
+
+  .logo {
+    display: none; }
+
+  .menu-icon {
+    display: flex; }
+
+  .navbar {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left-side" "right-side" "middle-right" "middle-left" "bottom-left" "bottom-right";
+    margin: 0; }
+
+  .grid-items {
+    grid-template-columns: 1fr;
+    grid-template-areas: "map1" "map2" "map3"; }
+
+  .bottom-part .copyright {
+    order: 2; } }
+@media (min-width: 481px) and (max-width: 767px) {
+  .responsive-navbar {
+    display: flex;
+    justify-content: space-between; }
+
+  .mobile-logo {
+    display: inline-block; }
+
+  .logo {
+    display: none; }
+
+  .menu-icon {
+    display: flex; }
+
+  .navbar {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1.5fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left-side" "right-side" "middle-right" "middle-left" "bottom-left" "bottom-right";
+    margin: 0; }
+
+  .grid-items {
+    grid-template-columns: 1fr;
+    grid-template-areas: "map1" "map2" "map3"; } }
+@media (min-width: 765px) and (max-width: 1024px) {
+  .responsive-navbar {
+    display: flex;
+    justify-content: space-between; }
+
+  .mobile-logo {
+    display: inline-block; }
+
+  .logo {
+    display: none; }
+
+  .menu-icon {
+    display: flex; }
+
+  .navbar {
+    position: absolute;
+    left: -100%;
+    grid-template-columns: 1.5fr;
+    grid-template-areas: "logo" "navbar";
+    height: 100vh; }
+
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "f-ball" "b-ball" "v-ball" "tennis" "skate";
+    height: 40vh; }
+
+  .grid-items {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "map1 map2" "map3 map3"; } }
+
+/*# sourceMappingURL=Football.css.map */

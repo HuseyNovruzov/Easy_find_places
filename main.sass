@@ -1,0 +1,159 @@
+@import 'abstract/variables'
+@import 'abstract/mixins'
+@import 'components/navigation_bar'
+@import 'components/footer'
+
+		
+*
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+
+body
+	background-color: #000
+	padding: 0 0 10px 0
+section
+	height: auto
+	position: relative
+	z-index: 1
+.bg-img
+	position: relative
+	
+	width: auto
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	flex-grow: 2
+	z-index: 1
+	&>*
+		z-index: 2
+	.bg-text
+		font-size: 3rem
+		text-align: center
+		word-break: keep-all
+		color: $white
+		@include fontSaira($txt-font-1,$txt-font-2,$txt-font-3)
+		font-weight: 550
+		padding: 0 0 10px 0
+input[type=button]
+	background-color: transparent
+	padding: 10px
+	border: 2px solid $txt-color
+	outline: none
+	border-radius: 7px
+	font-size: 17px
+	color: $white-2
+	
+	&:hover
+		background-color: $txt-color
+		color: $white-2
+
+.center
+	display: flex
+	justify-content: center
+	padding: 20px 0
+
+.grid-container
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-areas: 'football basketball tennis''valleyball cycle skate'
+	grid-gap: 10px
+	width: 80%
+	color: $grid-box-color
+	font-size: 18px
+	font-family: $font-helvetica
+
+.grid-container div:not(.grid-box-text)
+	height: 15em
+	padding: 20px
+	border-radius: 5px
+
+@include gridBox(football-box,football,#2EE7BD)
+@include gridBox(basketball-box,basketball,#2EC0E7)
+@include gridBox(tennis-box,tennis, #8ea1e8 )
+@include gridBox(valleyball-box,valleyball,#ca9ce6 )
+@include gridBox(cycle-box,cycle,#E72EA7)
+@include gridBox(skate-box,skate,#F889C4)
+
+
+@media (min-width: 280px) and (max-width: 480px)
+
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
+	.mobile-logo
+		display: inline-block
+	.logo
+		display: none
+	.menu-icon
+		display: flex
+	.navbar
+		position: absolute
+		left: -100%
+		grid-template-columns: 1fr
+		grid-template-areas: 'logo' 'navbar'
+		height: 100vh
+	nav
+		ul
+			grid-template-columns: 1fr
+			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+			height: 40vh
+	.grid-container
+		grid-template-columns: 1fr
+		grid-template-areas: 'football''basketball''tennis''valleyball''cycle''skate'
+	.bottom-part
+		.copyright
+			order: 2
+@media (min-width: 481px) and (max-width: 767px)
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
+	.mobile-logo
+		display: inline-block
+	.logo
+		display: none
+	.menu-icon
+		display: flex
+	.navbar
+		position: absolute
+		left: -100%
+		grid-template-columns: 1fr
+		grid-template-areas: 'logo' 'navbar' 
+		height: 100vh
+	nav
+		ul
+			grid-template-columns: 1fr
+			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+			height: 40vh
+	.grid-container
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: 'football basketball''tennis valleyball''cycle skate'
+
+@media (min-width: 768px) and (max-width: 1024px)
+	.responsive-navbar
+		display: flex
+		justify-content: space-between
+	.mobile-logo
+		display: inline-block
+	.logo
+		display: none
+	.menu-icon
+		display: flex
+	.navbar
+		position: absolute
+		left: -100%
+		grid-template-columns: 1fr
+		grid-template-areas: 'logo' 'navbar' 
+		height: 100vh
+	nav
+		ul
+			grid-template-columns: 1fr
+			grid-template-areas: 'f-ball' 'b-ball' 'v-ball' 'tennis' 'skate'
+			height: 40vh
+	.grid-container
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: 'football football''basketball tennis' 'valleyball valleyball''cycle skate'
+
+
