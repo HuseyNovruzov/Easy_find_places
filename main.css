@@ -184,7 +184,8 @@ section {
   justify-content: center;
   align-items: center;
   flex-grow: 2;
-  z-index: 1; }
+  z-index: 1;
+  padding: 2em; }
   .bg-img > * {
     z-index: 2; }
   .bg-img .bg-text {
