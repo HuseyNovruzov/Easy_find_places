@@ -1,4 +1,4 @@
-
+"use strict";
 let tasker = {
 	
 		parallax: function(){
@@ -18,7 +18,7 @@ let tasker = {
 			this.navbar = document.querySelector('.navbar');
 			this.underList = document.querySelector('#pagination');
 			this.links = document.querySelectorAll('.btn');
-			this.body = document.querySelector('.body');
+			this.completeBody = document.body;
 		},
 		//open and close mobile menu
 		openClose: function(){
@@ -26,7 +26,7 @@ let tasker = {
 				this.btnChilds[0].setAttribute('class','top');
 				this.btnChilds[1].setAttribute('class','remove');
 				this.btnChilds[2].setAttribute('class','bottom');
-				this.body.setAttribute('style','overflow: hidden')
+				this.completeBody.setAttribute('style','overflow: hidden')
 				this.navbar.setAttribute('style','left:0');
 				this.open = false;
 			}
@@ -34,7 +34,7 @@ let tasker = {
 				this.btnChilds[0].classList.remove("top");
 				this.btnChilds[1].classList.remove("remove");
 				this.btnChilds[2].classList.remove("bottom");
-				this.body.setAttribute('style','overflow: visible')
+				this.completeBody.setAttribute('style','overflow: visible')
 				this.navbar.setAttribute('style','left: -100%');
 				this.open = true;
 			}
@@ -44,18 +44,17 @@ let tasker = {
 		},
 		// show current active link
 		scanList: function(){
-		let current;
-		for(let i = 0;i<this.links.length;i++){
-			links = this.links[i];
+		let current,i=0,len = this.links.length,actLink;
+		for(;i<len;i++){
+			actLink = this.links[i];
 			current = this.underList.getElementsByClassName("active");
-			links.onclick = this.activate.bind(this,links,current);
+			actLink.onclick = this.activate.bind(this,actLink,current);
 			
 		}
 	},
-		activate: function(links,current){
+		activate: function(actLink,current){
 			current[0].className = current[0].className.replace("active","");
-			links.className+=" active";
-			links.preventDefault();
+			actLink.className+=" active";
 	}
 	}
 
