@@ -168,7 +168,7 @@ nav {
 
 body {
   background-color: #000;
-  padding: 0 0 10px 0; }
+  padding: 10px; }
 
 section {
   height: auto;
@@ -189,7 +189,7 @@ section {
   .bg-img > * {
     z-index: 2; }
   .bg-img .bg-text {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     word-break: keep-all;
     color: #fff;

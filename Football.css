@@ -167,6 +167,7 @@ nav {
   box-sizing: border-box; }
 
 body {
+  padding: 10px;
   background: #000; }
 
 .head-grid-container {
@@ -286,15 +287,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
-    height: 20em;
-    box-shadow: 0 0 3px #1974db; }
+    height: 16em;
+    background: #F5FFFA;
+    border-radius: 8px; }
     .grid-items .item1 p {
       padding: 0 20px;
       font-family: Helvetica, sans-sherif;
-      font-size: 18px;
       font-weight: 600;
-      margin: 1em 0; }
+      margin: 1em 0;
+      color: #A9A9A9; }
+      .grid-items .item1 p a {
+        color: #4285F4;
+        text-decoration: none;
+        font-size: 12px; }
+        .grid-items .item1 p a:hover {
+          text-decoration: underline;
+          color: #A9A9A9; }
     .grid-items .item1 .map-box {
       display: flex;
       justify-content: center;
@@ -308,15 +316,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
-    height: 20em;
-    box-shadow: 0 0 3px #1974db; }
+    height: 16em;
+    background: #F5FFFA;
+    border-radius: 8px; }
     .grid-items .item2 p {
       padding: 0 20px;
       font-family: Helvetica, sans-sherif;
-      font-size: 18px;
       font-weight: 600;
-      margin: 1em 0; }
+      margin: 1em 0;
+      color: #A9A9A9; }
+      .grid-items .item2 p a {
+        color: #4285F4;
+        text-decoration: none;
+        font-size: 12px; }
+        .grid-items .item2 p a:hover {
+          text-decoration: underline;
+          color: #A9A9A9; }
     .grid-items .item2 .map-box {
       display: flex;
       justify-content: center;
@@ -330,15 +345,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
-    height: 20em;
-    box-shadow: 0 0 3px #1974db; }
+    height: 16em;
+    background: #F5FFFA;
+    border-radius: 8px; }
     .grid-items .item3 p {
       padding: 0 20px;
       font-family: Helvetica, sans-sherif;
-      font-size: 18px;
       font-weight: 600;
-      margin: 1em 0; }
+      margin: 1em 0;
+      color: #A9A9A9; }
+      .grid-items .item3 p a {
+        color: #4285F4;
+        text-decoration: none;
+        font-size: 12px; }
+        .grid-items .item3 p a:hover {
+          text-decoration: underline;
+          color: #A9A9A9; }
     .grid-items .item3 .map-box {
       display: flex;
       justify-content: center;
