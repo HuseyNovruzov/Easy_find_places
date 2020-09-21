@@ -190,7 +190,6 @@ section {
     z-index: 2; }
   .bg-img .bg-text {
     font-size: 2rem;
-    text-align: center;
     word-break: keep-all;
     color: #fff;
     font-family: "Josefin Slab", serif;
